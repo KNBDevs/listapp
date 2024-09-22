@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #263238;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff5252;
+}
+
+.todo-form {
+    margin-bottom: 20px;
+}
+
+.todo-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.todo-form input[type="text"], .todo-form input[type="date"], .todo-form input[type="time"], .todo-form button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.todo-form label {
+    display: flex;
+    align-items: center;
+}
+
+.todo-form button {
+    background: #ff5252;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.todo-form button:hover {
+    background: #e53935;
+}
+
+.todo-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.task-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-list th, .task-list td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.task-list th {
+    background: #ffca28;
+}
+
+.task-list tbody tr:nth-child(odd) {
+    background: #fff8e1;
+}
+
+.task-list button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.task-list button.edit {
+    color: #00e676;
+}
+
+.task-list button.delete {
+    color: #d50000;
+}
+
+.task-list button:hover.edit {
+    color: #00c853;
+}
+
+.task-list button:hover.delete {
+    color: #c62828;
+}
+
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #ff5252;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    animation: fadeInOut 3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-20px); opacity: 0; }
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.task-list tbody tr {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.task-list tbody tr.removing {
+    animation: slideOut 0.5s ease-in-out;
+}

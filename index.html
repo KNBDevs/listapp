@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Tareas</h2>
+        <div class="todo-form">
+            <form id="taskForm">
+                <div class="form-row">
+                    <input type="text" id="taskName" name="taskName" placeholder="Nombre de la tarea" required>
+                    <input type="date" id="taskDate" name="taskDate" required>
+                    <input type="time" id="taskTime" name="taskTime">
+                    <label>
+                        <input type="checkbox" id="allDay" name="allDay"> Todo el día
+                    </label>
+                    <button type="submit">Añadir Tarea</button>
+                </div>
+                <textarea id="taskDescription" name="taskDescription" placeholder="Descripción de la tarea"></textarea>
+            </form>
+        </div>
+        <div class="task-list">
+            <table id="taskTable">
+                <thead>
+                    <tr>
+                        <th><button id="sortByName">Nombre</button></th>
+                        <th><button id="sortByDate">Fecha</button></th>
+                        <th><button id="sortByTime">Hora</button></th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se listarán las tareas -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="notification" id="notification">Tarea añadida</div>
+    <script src="js/app.js"></script>
+</body>
+</html>
